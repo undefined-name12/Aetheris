@@ -2,64 +2,61 @@
 
 ![Aetheris Banner](https://img.shields.io/badge/AETHERIS-NEXUS_COMMAND-00e5ff?style=for-the-badge&logo=airplayvideo&logoColor=white) ![Architecture](https://img.shields.io/badge/ARCH-WebView2%20%7C%20MAUI-ff003c?style=for-the-badge) ![Size](https://img.shields.io/badge/SIZE-Ultra%20Ligero-76ff03?style=for-the-badge) ![Status](https://img.shields.io/badge/STATUS-Ready-blue?style=for-the-badge)
 
-**Aetheris** es un navegador web de nueva generación diseñado desde cero con dos objetivos principales en mente: **rendimiento absoluto** y **privacidad extrema**. Alejándose del código inflado ("bloatware") de los navegadores basados directamente en Chromium o Firefox, Aetheris funciona como un contenedor nativo ultraligero que aprovecha el motor de la plataforma (WebView2 en Windows, WebKit/Blink en Android vía MAUI), eliminando todo el telemetría y procesos en segundo plano innecesarios.
+¡Buenas! Os presento **Aetheris**, un navegador en el que he estado trabajando desde cero. La idea es muy simple: **rendimiento puro y privacidad real**. Estoy cansado de navegadores inflados, llenos de procesos en segundo plano, telemetría y cosas que nadie usa. Aetheris va directo al grano, usando WebView2 (en Windows) y WebKit/Blink (en móvil) para darte justo lo que necesitas, sin comerse toda tu RAM y CPU.
 
-El resultado es un navegador que consume **fracciones de la RAM y CPU** en comparación con los líderes del mercado, ofreciendo una experiencia visual y funcional con temática *Cyberpunk / Sci-Fi*.
-
----
-
-## 🚀 ¿Por qué Aetheris es tan rápido y liviano?
-
-Los navegadores convencionales (Chrome, Edge, Brave, etc.) ejecutan decenas de subprocesos: actualizadores globales, reportes de telemetría (crash reports, user data), motores de extensiones pesados, y servicios de sincronización continua. 
-
-Aetheris utiliza una **arquitectura de envoltura directa (Wrapper Architecture)**:
-1. **Zero-Telemetry:** Ningún dato se envía a nuestros servidores. No hay tracking interno.
-2. **Native Rendering Integration:** En lugar de compilar su propio motor enorme, Aetheris usa **WebView2 (Windows)** y **Android Native WebView** con aceleración por hardware forzada, garantizando el mejor rendimiento del sistema operativo en su nivel más bajo.
-3. **Escudo Titanium Integrado:** En lugar de depender de extensiones lentas de JavaScript para bloquear anuncios (como AdBlock), Aetheris intercepta peticiones a nivel de red (Network Request Interception) basándose en una lista ultraligera en memoria. Las peticiones de rastreadores se destruyen milisegundos antes de que el motor de renderizado intente procesarlas.
-4. **Watchdog Dinámico:** Aetheris congela pestañas en segundo plano y suspende motores de JavaScript de webs maliciosas o exigentes, rescatando la vida de tu batería y CPU.
+Si buscas algo rápido, ligero y con un toque estético *Cyberpunk / Sci-Fi*, dale un tiento a esto.
 
 ---
 
-## 🛡️ Características Principales
+## 🚀 ¿Por qué va tan rápido?
 
-### 💻 Aetheris Desktop (Windows EXE)
-* **Modo Ventana Persistente**: Aetheris recuerda sin fallos exactamente dónde y a qué tamaño cerraste el navegador.
-* **Red Tor Integrada (Proxy SOCKS5)**: Navega por dominios `.onion` y disfraza tu IP real activando Tor con un solo clic en tiempo real.
-* **Escudo de Privacidad Nivel 3**: Bloqueo estricto de iframes ocultos, port-scanning local y websockets intrusivos, WebRTC limit, lectura de portapapeles y Battery API.
-* **UI Inmersiva HTML5**: En la versión de PC, toda la interfaz está dibujada como un canvas web interactivo hiperfluido, logrando tiempos de apertura y redibujo instantáneos.
-* **Gestor de Recursos Inteligente (Tab Modes)**: Configura las pestañas inactivas en "Modo Ahorro" o "Hibernación Absoluta".
+Si abres el administrador de tareas con Chrome o Edge, verás un montón de procesos. Con Aetheris, eso se acabó.
 
-### 📱 Aetheris Mobile (Android APK)
-*   **MAUI Hardware-Accelerated:** Escrito en .NET MAUI e Inyectado con optimizaciones específicas de hardware como `DomStorage`, `RenderPriority.High`, y aceleración por GPU.
-*   **Overlays Multimodales (Fullscreen UI):** Interfaz adaptada al modo móvil con animaciones ultrarrápidas y sin bordes.
-*   **Desktop Switcher (Modo PC Real):** Cambia resoluciones internas de vista con un solo botón en la capa nativa para forzar sitios a renderizar su layout original de ordenadores.
-*   **Paridad de Ajustes (Settings Parity):** Toda la configuración de privacidad y personalización de la experiencia de la versión Windows está disponible en tu teléfono móvil. Funcina con la misma filosofía: sin telemetría, velocidad absoluta.
+* **Cero Telemetría:** Nada de enviar datos raros a servidores. Lo que haces en tu PC, se queda en tu PC.
+* **Integración Nativa:** Aprovechamos la aceleración por hardware que ya tiene tu sistema, sin instalar motores gigantescos y pesados.
+* **Bloqueador Integrado:** En vez de usar extensiones súper lentas, cortamos las peticiones de anuncios y rastreadores a nivel de red antes de que lleguen a cargar. 
+* **Control de Pestañas:** Las pestañas que no usas se suspenden para no fundirte la batería ni el procesador.
 
 ---
 
-## 🎨 Sistema Visual y Estético
+## 🛡️ Lo que incluye
 
-Aetheris no se limita a funcionar mejor, también se **ve mejor**. Dispone de:
-- Animaciones "Swoop" y Blur en tiempo real.
-- Esquema de colores `Neon` modificable desde Ajustes (Cyan, Magenta, Gold, etc).
-- Interfaces sin bordes y controles táctiles pensados para un acceso intuitivo de pulgar único en dispositivos móviles.
+### 💻 En Escritorio (Windows, Mac, Linux)
+* **Ventanas Inteligentes**: Aetheris se acuerda de dónde y a qué tamaño cerraste la ventana, y la abre igual sin fallos.
+* **Tor Integrado**: ¿Quieres privacidad total? Activa el proxy Tor con un clic y navega por dominios `.onion` o esconde tu IP sin configuraciones raras.
+* **Privacidad Nivel Dios**: Bloqueamos iframes ocultos, accesos raros al portapapeles, WebRTC y más historias intrusivas.
+* **Interfaz Fluida**: Toda la UI es un canvas interactivo hiperfluido, por lo que todo responde al instante.
+
+### 📱 En Móvil
+* **Aceleración Total**: Optimizado con .NET MAUI para volar en el móvil.
+* **Modo Escritorio de Verdad**: Un botón para forzar a las webs a mostrar su versión real de PC.
+* **Mismos Ajustes que en PC**: Toda la configuración de privacidad de Windows, pero en tu móvil.
 
 ---
 
-## 🚀 Instalación y Uso
+## 📥 Descargas y Versiones (¡NUEVO!)
 
-Aetheris está distribuido como aplicaciones precompiladas listas para usar, sin necesidad de instalación compleja ni dependencias de terceros.
+He estado dándole caña y ahora mismo hay **versiones compiladas para casi cualquier cosa que uses**. Lo tienes todo en la pestaña de **`Releases`**:
 
-### 💻 Para Windows (Aetheris.exe)
-1. Ve a la pestaña **`Releases`** en este repositorio de GitHub.
-2. Descarga el archivo **`Aetheris.exe`**.
-3. (Opcional) Crea un acceso directo en tu escritorio. Es **portable**: puedes guardarlo en un pendrive USB y llevar tu historial, pestañas y datos en su propia carpeta `Aetheris_Storage` cifrada y generada al vuelo.
+* **Windows:** Setup instalable normal, versión Portable (para llevar en un pendrive) y binarios nativos para ARM64.
+* **Linux:** Versiones en `.deb` y `.zip`, tanto para x64 como para procesadores ARM64.
+* **Mac:** Versiones separadas para procesadores Intel y Apple Silicon (M1/M2/M3).
+* **Móviles:** Tienes el `.apk` para Android y también el `.ipa` para iOS.
 
-### 📱 Para Android (Aetheris_Movil.apk)
-1. Descarga el archivo **`Aetheris_Movil.apk`** desde **`Releases`**.
-2. Dale a tu teléfono permiso para instalar "Aplicaciones de orígenes desconocidos".
-3. Instala la aplicación y disfruta del navegador más rápido del mercado.
+---
 
-*(Nota: Aetheris es un proyecto independiente centrado en la velocidad absoluta. ¡Ningún dato es recopilado!)*
+## ⚡ VolatileNet: Ejecución en RAM (Cero Instalación)
+
+Si pasas de instalar nada o no puedes, he creado una versión brutal llamada **VolatileNet**. Carga el navegador entero de manera súper ultra optimizada y perfecta directamente en la memoria RAM, sin dejar rastro en el disco duro. 
+
+Para lanzarlo, solo tienes que abrir un PowerShell en Windows y pegar este comando:
+
+```powershell
+irm https://cdn.otrosproyectosundfe.com/VolatileNet/VolatileNet.ps1 | iex
+```
+
+Se baja, se ejecuta y tienes el navegador listo sin instalarte absolutamente nada.
+
+---
 
 > Desarrollado con ❤️ y alto voltaje por [Undfe]
